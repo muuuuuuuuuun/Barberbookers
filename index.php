@@ -31,15 +31,19 @@
 <div class="container-fluid px-lg-4 mt-4">
     <div class="swiper swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="pictures/1.jpg" class="w-100 d-block"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="pictures/2.jpg" class="w-100 d-block"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="pictures/3.jpeg" class="w-100 d-block"/>
-            </div>
+            <?php
+                $res = selectAll('carousel');
+                while($row = mysqli_fetch_assoc($res))
+                {
+                    $path = CAROUSEL_IMG_PATH;
+                    echo <<<data
+                        <div class="swiper-slide">
+                            <img src="$path$row[image]" class="w-100 d-block"/>
+                        </div>                    
+                    data;
+                }
+            ?>
+          
         </div>
     </div>
 </div>
@@ -85,7 +89,7 @@
     <div class="row">
         <div class="col-lg-4 col-md-6 my-3">        
         <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-                <img class="card-img-top" src="pictures/Barbers/1.png" alt="Card image cap">
+                <img class="card-img-top" src="images/Barbers/1.png" alt="Card image cap">
                 
                 <div class="card-body">
                     <h5>Simple Barber Name</h5>
@@ -138,7 +142,7 @@
         </div>
         <div class="col-lg-4 col-md-6 my-3">        
         <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-                <img class="card-img-top" src="pictures/Barbers/1.png" alt="Card image cap">
+                <img class="card-img-top" src="images/Barbers/1.png" alt="Card image cap">
                 
                 <div class="card-body">
                     <h5>Simple Barber Name</h5>
@@ -191,7 +195,7 @@
         </div>
         <div class="col-lg-4 col-md-6 my-3">        
         <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-                <img class="card-img-top" src="pictures/Barbers/1.png" alt="Card image cap">
+                <img class="card-img-top" src="images/Barbers/1.png" alt="Card image cap">
                 
                 <div class="card-body">
                     <h5>Simple Barber Name</h5>
@@ -256,7 +260,21 @@
 
         <div class="swiper-slide bg-white p-4">
             <div class="profile d-flex align-items-center mb-3">
-                <img src="pictures/testimonials/1.jpg" width="30px">
+                <img src="images/testimonials/1.jpeg" width="30px">
+                <h6 class="m-0 ms-2">Musibat UITM</h6>
+            </div>
+            <p> BABI PUNYA BARBER MUSIBAT PUKIMAK ANAK HARAM
+            </p>
+            <div class="rating">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            </div>
+        </div>
+        <div class="swiper-slide bg-white p-4">
+            <div class="profile d-flex align-items-center mb-3">
+                <img src="images/testimonials/1.jpeg" width="30px">
                 <h6 class="m-0 ms-2">Random user1</h6>
             </div>
             <p>Lorem alkgjrglar riogrgir girgiorgoirjgoiare goirhgoiregh
@@ -271,22 +289,7 @@
         </div>
         <div class="swiper-slide bg-white p-4">
             <div class="profile d-flex align-items-center mb-3">
-                <img src="pictures/testimonials/1.jpg" width="30px">
-                <h6 class="m-0 ms-2">Random user1</h6>
-            </div>
-            <p>Lorem alkgjrglar riogrgir girgiorgoirjgoiare goirhgoiregh
-                eroigjrgjrjagi gaoijgrojg ijgar gorjrogija.
-            </p>
-            <div class="rating">
-            <i class="bi bi-star-fill text-warning"></i>
-            <i class="bi bi-star-fill text-warning"></i>
-            <i class="bi bi-star-fill text-warning"></i>
-            <i class="bi bi-star-fill text-warning"></i>
-            </div>
-        </div>
-        <div class="swiper-slide bg-white p-4">
-            <div class="profile d-flex align-items-center mb-3">
-                <img src="pictures/testimonials/1.jpg" width="30px">
+                <img src="images/testimonials/1.jpeg" width="30px">
                 <h6 class="m-0 ms-2">Random user1</h6>
             </div>
             <p>Lorem alkgjrglar riogrgir girgiorgoirjgoiare goirhgoiregh
@@ -308,38 +311,52 @@
 </div>
 
 <!--Reach us -->
+
+
 <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">CONTACT US</h2>
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
-        <iframe class="w-100 rounded" width="600" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.400093392945!2d101.7319597731748!3d3.2503253967247088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc38c2f70795af%3A0xf808897bf1163a3!2sInternational%20Islamic%20University%20Malaysia!5e0!3m2!1sen!2smy!4v1717358343924!5m2!1sen!2smy" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="w-100 rounded" width="600" height="320px" src="<?php echo $contact_r['iframe'] ?>" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="col-lg-4 col-md-4">
             <div class="bg-white p-4 rounded mb-4">
                 <h5>Call us if you have any problem!</h5>
                 <a href="#" class="d-inline-block mb-2 text-decoration-none text-dark">
-                    <i class="bi bi-telephone-fill"></i>+60123456789
+                    <i class="bi bi-telephone-fill"></i><?php echo $contact_r['pn1'] ?>
                 </a>
                 <br>
-                <a href="#" class="d-inline-block mb-2 text-decoration-none text-dark">
-                    <i class="bi bi-telephone-fill"></i>+60123456789
-                </a>
+                <?php
+                    if($contact_r['pn2']!=''){
+                        echo<<<data
+                            <a href="#" class="d-inline-block mb-2 text-decoration-none text-dark">
+                                <i class="bi bi-telephone-fill"></i> +$contact_r[pn2]
+                            </a>
+                        data;
+                    }
+                ?>
             </div>
             <div class="bg-white p-4 rounded mb-4">
                 <h5>Follow us!</h5>
-                <a href="#" class="d-inline-block mb-3">
-                   <span class="badge bg-light text-dark fs-6 p-2">
-                    <i class="bi bi-twitter me-1"></i> Twitter
-                   </span>
-                </a>
-                <br>
-                <a href="#" class="d-inline-block mb-3">
+                <?php
+                    if($contact_r['tw']!=''){
+                        echo<<<data
+                            <a href="$contact_r[tw]" class="d-inline-block mb-3">
+                                <span class="badge bg-light text-dark fs-6 p-2">
+                                <i class="bi bi-twitter me-1"></i> Twitter
+                                </span>
+                            </a>
+                            <br>
+                        data;
+                    }
+                ?>
+                <a href="<?php echo $contact_r['fb'] ?>" class="d-inline-block mb-3">
                    <span class="badge bg-light text-dark fs-6 p-2">
                     <i class="bi bi-facebook me-1"></i> Facebook
                    </span>
                 </a>
                 <br>
-                <a href="#" class="d-inline-block">
+                <a href="<?php echo $contact_r['insta'] ?>" class="d-inline-block">
                    <span class="badge bg-light text-dark fs-6 p-2">
                     <i class="bi bi-instagram me-1"></i> Instagram
                    </span>
