@@ -17,10 +17,10 @@
     <div class="h-line bg-dark"></div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
 
-        <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 px-lg-0">
+        <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 ps-4">
             <nav class="navbar navbar-expand-lg navbar-light bg-white rounded shadow">
                 <div class="container-fluid flex-lg-column align-items-stretch">
                     <h4 class="mt-2">FILTERS</h4>
@@ -77,170 +77,89 @@
         </div>
 
         <div class="col-lg-9 col-md-12 px-4">
-            <div class="card mb-4 border-0 shadow">
-                <div class="row g-0 p-3 align-items-center">
-                    <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                        <img src="images/Barbers/1.png" class="img-fluid rounded">
-                    </div>
-                    <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                        <h5 class="mb-3">Simple Barber Name</h5>
-                        <div class="features mb-3">
-                            <h6 class="mb-1">Features</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla bla bla
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                        </div>
-                        <div class="services mb-3">
-                            <h6 class="mb-1">Services</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla bla bla
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                        </div>
-                        <div class="rating">
-                            <h6 class="mb-1">Rating</h6>
-                            <span class="badge rounded-pill bg-light">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
-                        <h6 class="mb-4">RM7 average</h6>
-                        <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
-                        <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="card mb-4 border-0 shadow">
-                <div class="row g-0 p-3 align-items-center">
-                    <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                        <img src="images/Barbers/1.png" class="img-fluid rounded">
-                    </div>
-                    <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                        <h5 class="mb-3">Simple Barber Name</h5>
-                        <div class="features mb-3">
-                            <h6 class="mb-1">Features</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla bla bla
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                        </div>
-                        <div class="services mb-3">
-                            <h6 class="mb-1">Services</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla bla bla
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                        </div>
-                        <div class="rating">
-                            <h6 class="mb-1">Rating</h6>
-                            <span class="badge rounded-pill bg-light">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
-                        <h6 class="mb-4">RM7 average</h6>
-                        <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
-                        <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                $barber_res = select("SELECT * FROM `barbers` WHERE `status`=? AND `removed`=?",[1,0],'ii');
 
-            <div class="card mb-4 border-0 shadow">
-                <div class="row g-0 p-3 align-items-center">
-                    <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                        <img src="images/Barbers/1.png" class="img-fluid rounded">
-                    </div>
-                    <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                        <h5 class="mb-3">Simple Barber Name</h5>
-                        <div class="features mb-3">
-                            <h6 class="mb-1">Features</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla bla bla
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
+                while($barber_data = mysqli_fetch_assoc($barber_res))
+                {
+                    //get features of barber
+
+                    $fea_q = mysqli_query($con,"SELECT f.name FROM `features` f 
+                        INNER JOIN `barber_features` rfea ON f.id = rfea.features_id 
+                        WHERE rfea.barber_id = '$barber_data[id]'");
+
+                    $features_data = "";
+                    while($fea_row = mysqli_fetch_assoc($fea_q)){
+                        $features_data.="<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+                        $fea_row[name]
+                        </span>";
+                    }
+
+                    //get services of barber
+                    $fac_q = mysqli_query($con,"SELECT f.name FROM `services` f 
+                        INNER JOIN `barber_services` rfac ON f.id = rfac.services_id 
+                        WHERE rfac.barber_id = '$barber_data[id]'");
+
+                    $services_data = "";
+                    while($fac_row = mysqli_fetch_assoc($fac_q)){
+                        $services_data.="<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+                        $fac_row[name]
+                        </span>";
+                    }
+
+                    //get thumbnail of image
+
+                    $barber_thumb = BARBERS_IMG_PATH."thumbnail.jpg";
+                    $thumb_q = mysqli_query($con,"SELECT * FROM `barber_images` 
+                        WHERE `barber_id`='$barber_data[id]' 
+                        AND `thumb`='1'");
+
+                    if(mysqli_num_rows($thumb_q)>0){
+                        $thumb_res = mysqli_fetch_assoc($thumb_q);
+                        $barber_thumb = BARBERS_IMG_PATH.$thumb_res['image'];
+                    }
+
+                    //print room card
+                    echo<<<data
+                        <div class="card mb-4 border-0 shadow">
+                            <div class="row g-0 p-3 align-items-center">
+                                <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
+                                    <img src="$barber_thumb" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-5 px-lg-3 px-md-3 px-0">
+                                    <h5 class="mb-3">$barber_data[name]</h5>
+                                    <div class="features mb-3">
+                                        <h6 class="mb-1">Features</h6>
+                                        $features_data
+                                    </div>
+                                    <div class="services mb-3">
+                                        <h6 class="mb-1">Services</h6>
+                                        $services_data
+                                    </div>
+                                    <div class="rating">
+                                        <h6 class="mb-1">Rating</h6>
+                                        <span class="badge rounded-pill bg-light">
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
+                                    <h6 class="mb-4">Average: RM $barber_data[price]</h6>
+                                    <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
+                                    <a href="booking_details.php?id=$barber_data[id]" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="services mb-3">
-                            <h6 class="mb-1">Services</h6>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla bla bla
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla bla 
-                            </span>
-                            <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                Note: bla 
-                            </span>
-                        </div>
-                        <div class="rating">
-                            <h6 class="mb-1">Rating</h6>
-                            <span class="badge rounded-pill bg-light">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
-                        <h6 class="mb-4">RM7 average</h6>
-                        <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
-                        <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
-                    </div>
-                </div>
-            </div>
+                    data;
+
+                }
+            ?>
+
+
         </div>
 
     </div>
