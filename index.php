@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barberbookers</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <?php require('inc/links.php')?>
+    <title><?php echo $settings_r['site_title'] ?> - Home</title>
 
     <style>
         
@@ -64,13 +64,14 @@
                         <input type="time" class="form-control shadow-none">
                     </div>
                     <div class="col-lg-3 mb-3">
-                        <label class="form-label" style="font-weight:500;">What gender are you?</label>
+                        <label class="form-label" style="font-weight:500;">Mahallah(Available)</label>
                         <select class="form=select shadow-none">
                             <option selected>Select one</option>
-                            <option value="male-adult">Male Adult</option>
-                            <option value="male-child">Male Child</option>
-                            <option value="female-adult">Female Adult</option>
-                            <option value="female-child">Fenale Child</option>
+                            <option value="ali">Ali</option>
+                            <option value="siddiq">Siddiq</option>
+                            <option value="faruq">Faruq</option>
+                            <option value="uthman">Uthman</option>
+                            <option value="bilal">Bilal</option>
                         </select>
                     </div>
                     <div class="col-lg-1 mb-lg-3 mt-2">
@@ -130,6 +131,16 @@
                     $barber_thumb = BARBERS_IMG_PATH.$thumb_res['image'];
                 }
 
+                $book_btn = "";
+                if(!$settings_r['shutdown']){
+                    $login = 0;
+                    if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+                        $login = 1;
+                    }
+                    $book_btn = "<button onclick='checkLoginToBook($login,$barber_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Book Now</button>";
+                }
+
+
                 //print room card
                 echo<<<data
                     <div class="col-lg-4 col-md-6 my-3">        
@@ -157,7 +168,7 @@
                                     </span>
                                 </div>
                                 <div class="d-flex justify-content-evenly mb-2">
-                                    <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
+                                    $book_btn
                                     <a href="booking_details.php?id=$barber_data[id]" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
                                 </div>
                             </div>
@@ -183,10 +194,12 @@
 
         <div class="swiper-slide bg-white p-4">
             <div class="profile d-flex align-items-center mb-3">
-                <img src="images/testimonials/1.jpeg" width="30px">
-                <h6 class="m-0 ms-2">Anonymous dari langit</h6>
+                <img src="images/testimonials/1.jpg" width="30px">
+                <h6 class="m-0 ms-2">StyleMaven22</h6>
             </div>
-            <p> WAH HEBATNYA!
+            <p> John is amazing! I’ve been going to him for years and he never disappoints. 
+                He knows exactly what I want and always nails it. The attention to detail is incredible, 
+                and I always leave feeling like a million bucks. Highly recommend!
             </p>
             <div class="rating">
             <i class="bi bi-star-fill text-warning"></i>
@@ -197,11 +210,12 @@
         </div>
         <div class="swiper-slide bg-white p-4">
             <div class="profile d-flex align-items-center mb-3">
-                <img src="images/testimonials/1.jpeg" width="30px">
-                <h6 class="m-0 ms-2">Random user1</h6>
+                <img src="images/testimonials/2.png" width="30px">
+                <h6 class="m-0 ms-2">TrendyTina</h6>
             </div>
-            <p>Lorem alkgjrglar riogrgir girgiorgoirjgoiare goirhgoiregh
-                eroigjrgjrjagi gaoijgrojg ijgar gorjrogija.
+            <p>John is a true artist! He transformed my hair and gave me a look that suits my personality perfectly. 
+                The whole experience was fantastic, from the warm welcome to the final reveal. If you want a barber who 
+                listens and delivers, John is your guy.
             </p>
             <div class="rating">
             <i class="bi bi-star-fill text-warning"></i>
@@ -212,11 +226,29 @@
         </div>
         <div class="swiper-slide bg-white p-4">
             <div class="profile d-flex align-items-center mb-3">
-                <img src="images/testimonials/1.jpeg" width="30px">
-                <h6 class="m-0 ms-2">Random user1</h6>
+                <img src="images/testimonials/3.jpg" width="30px">
+                <h6 class="m-0 ms-2">ThatDude242</h6>
             </div>
-            <p>Lorem alkgjrglar riogrgir girgiorgoirjgoiare goirhgoiregh
-                eroigjrgjrjagi gaoijgrojg ijgar gorjrogija.
+            <p>Yo, Hazami is the real deal, fam! I walked in lookin’ raggedy, 
+                and he hooked me up with the freshest fade I ever had. Dude’s got skills for days, 
+                and he’s mad chill too. If you need a cut that’s gonna have you lookin’ fly, Hazami’s your guy. 
+                Don’t sleep on him!
+            </p>
+            <div class="rating">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            </div>
+        </div>
+        <div class="swiper-slide bg-white p-4">
+            <div class="profile d-flex align-items-center mb-3">
+                <img src="images/testimonials/4.png" width="30px">
+                <h6 class="m-0 ms-2">AnonymousJo</h6>
+            </div>
+            <p>Aye, Hazami’s the truth. He’s got that barber game on lock. Came in with a mop, 
+                left with a top-notch cut. Plus, he’s cool people. Good vibes all around. 
+                Hazami’s the plug for them sharp cuts. Trust, you won’t regret it.
             </p>
             <div class="rating">
             <i class="bi bi-star-fill text-warning"></i>

@@ -16,13 +16,16 @@
                         <a href="dashboard.php" class="nav-link text-white">Dashboard</a>
                     </li>
                     <li class="nav-item">
+                        <a href="users.php" class="nav-link text-white">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="user_queries.php" class="nav-link text-white">User Queries</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="booking.php" class="nav-link text-white">Barbers</a>
                     </li>
                     <li class="nav-item">
                         <a href="features_services.php" class="nav-link text-white">Features & Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="user_queries.php" class="nav-link text-white">User Queries</a>
                     </li>
                     <li class="nav-item">
                         <a href="carousel.php" class="nav-link text-white">Carousel</a>

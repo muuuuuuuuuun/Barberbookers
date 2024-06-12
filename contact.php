@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barberbookers - Contact Us</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <?php require('inc/links.php')?>
+    <title><?php echo $settings_r['site_title'] ?> - Contact Us</title>
+    
 
     <style>
         .box{
@@ -18,12 +19,14 @@
 <?php require('inc/header.php'); ?>
 
 <div class="my-5 px-4">
-    <h2 class="fw-bold h-font text-center">ABOUT US</h2>
+    <h2 class="fw-bold h-font text-center">CONTACT US</h2>
     <div class="h-line bg-dark"></div>
     <p class="text-center mt-3">
-        alkjgrlgrglkrgkrjgkrlaglrjglrjglarjljgreogj
-        aregjaeglrjglrjgkjgklajglrjglajrgjrlkj
-        alkrgjjlerjgajjrjglare
+    Got questions? We're here to help! 
+    Reach out to us and we'll get back to you as soon as possible.<br>
+    Whether you’re looking for more information about our services or want to provide feedback, 
+    we’d love to hear from you.<br>
+    Fill out the form below or give us a call.
     </p>
 </div>
 

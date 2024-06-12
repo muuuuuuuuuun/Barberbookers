@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barberbookers - Barbers</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <?php require('inc/links.php')?>
+    <title><?php echo $settings_r['site_title'] ?> - Barbers</title>
 
 </head>
 <body class="bg-light">
@@ -37,38 +37,58 @@
                         </div>
 
                         <div class="border bg-light p-3 rounded mb-3">
-                            <h5 class="mb-3" style="font-size:18px;">SERVICES</h5>
+                            <h5 class="mb-3" style="font-size:18px;">FEATURES</h5>
                             <div class="mb-2">
                                 <input type="checkbox" id="f1" class="form-check-input shadow-none me-1">
-                                <label for="f1" class="form-check-label">Service one</label>
+                                <label for="f1" class="form-check-label">Payment: Cash</label>
                             </div>
                             <div class="mb-2">
                                 <input type="checkbox" id="f2" class="form-check-input shadow-none me-1">
-                                <label for="f2" class="form-check-label">Service two</label>
+                                <label for="f2" class="form-check-label">Payment: QR</label>
                             </div>
                             <div class="mb-2">
                                 <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
-                                <label for="f3" class="form-check-label">Service three</label>
+                                <label for="f3" class="form-check-label">Speak: Malay</label>
+                            </div>
+                            <div class="mb-2">
+                                <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
+                                <label for="f3" class="form-check-label">Speak: English</label>
+                            </div>
+                            <div class="mb-2">
+                                <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
+                                <label for="f3" class="form-check-label">Morning</label>
+                            </div>
+                            <div class="mb-2">
+                                <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
+                                <label for="f3" class="form-check-label">Evening</label>
+                            </div>
+                            <div class="mb-2">
+                                <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
+                                <label for="f3" class="form-check-label">Night</label>
                             </div>
                         </div>
 
                         <div class="border bg-light p-3 rounded mb-3">
-                            <h5 class="mb-3" style="font-size:18px;">Gender</h5>
+                            <h5 class="mb-3" style="font-size:18px;">SERVICES</h5>
                             <div class="mb-2">
                                 <input type="checkbox" id="g1" class="form-check-input shadow-none me-1">
-                                <label for="g1" class="form-check-label">Male Adult</label>
+                                <label for="g1" class="form-check-label">Buzz Cut</label>
                             </div>
                             <div class="mb-2">
                                 <input type="checkbox" id="g2" class="form-check-input shadow-none me-1">
-                                <label for="g2" class="form-check-label">Male Child</label>
+                                <label for="g2" class="form-check-label">Fade</label>
                             </div>
                             <div class="mb-2">
                                 <input type="checkbox" id="g3" class="form-check-input shadow-none me-1">
-                                <label for="g3" class="form-check-label">Female Adult</label>
+                                <label for="g3" class="form-check-label">French Crop</label>
                             </div>
                             <div class="mb-2">
                                 <input type="checkbox" id="g4" class="form-check-input shadow-none me-1">
-                                <label for="g4" class="form-check-label">Female Child</label>
+                                <label for="g4" class="form-check-label">Beard Trimming</label>
+                            </div>
+                            <div class="mb-2">
+                                <input type="checkbox" id="g4" class="form-check-input shadow-none me-1">
+                                <label for="g4" class="form-check-label">Massage</label>
                             </div>
                         </div>
                     </div>
@@ -120,6 +140,18 @@
                         $barber_thumb = BARBERS_IMG_PATH.$thumb_res['image'];
                     }
 
+
+                    $book_btn = "";
+                    if(!$settings_r['shutdown']){
+
+                        $login = 0;
+                        if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+                            $login = 1;
+                        }
+
+                        $book_btn = "<button onclick='checkLoginToBook($login,$barber_data[id])' class='btn btn-sm w-100 text-white custom-bg shadow-none mb-2'>Book Now</button>";
+                    }
+
                     //print room card
                     echo<<<data
                         <div class="card mb-4 border-0 shadow">
@@ -149,7 +181,7 @@
                                 </div>
                                 <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
                                     <h6 class="mb-4">Average: RM $barber_data[price]</h6>
-                                    <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
+                                    $book_btn
                                     <a href="booking_details.php?id=$barber_data[id]" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
                                 </div>
                             </div>

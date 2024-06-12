@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barberbookers - About Us</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <?php require('inc/links.php')?>
+    <title><?php echo $settings_r['site_title'] ?> - About Us</title>
 
     <style>
         .box{
@@ -21,25 +21,23 @@
     <h2 class="fw-bold h-font text-center">ABOUT US</h2>
     <div class="h-line bg-dark"></div>
     <p class="text-center mt-3">
-        alkjgrlgrglkrgkrjgkrlaglrjglrjglarjljgreogj
-        aregjaeglrjglrjgkjgklajglrjglajrgjrlkj
-        alkrgjjlerjgajjrjglare
+        Where style meets skill, and every cut tells a story.
     </p>
 </div>
 
 <div class="container">
     <div class="row justify-content-between align-items-center">
         <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
-            <h3 class="mb-3">alkgjalgjrlkajlk</h3>
+            <h3 class="mb-3">Behind the Chair: The Faces of Style</h3>
             <p>
-                karejgaljkrjalkjgrkjglrjlajgrjgljgajlgg
-                arlgjrgjlkrjgrjkgljgajglrkljrkjglaeljgrlkg
-                rlglkjaglkrgjkrjljagjrlkgjrjgkrjglrjglerjg
-                rklklgmvkeojepjijfimgrmvrmvormgoirajggjaoag
+            Discover the skilled hands behind the sharpest cuts in IIUM. 
+            Our barbers are not just professionals; they're artists dedicated to crafting your perfect look. 
+            From classic fades to modern styles, they bring expertise and passion to every appointment. 
+            Get to know the faces behind the clippers and find your go-to barber today!
             </p>
         </div>
         <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
-            <img src="images/about/1.jpeg" class="w-100">
+            <img src="images/about/1.png" class="w-100">
         </div>
     </div>
 </div>
@@ -48,25 +46,25 @@
     <div class="row">
         <div class="col-lg-3 col-md-6 mb-4 px-4">
             <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                <img src="images/about/1.jpeg" width="70px">
-                <h4 class="mt-3">50+ BARBERS</h4>
+                <img src="images/about/2.svg" width="70px">
+                <h4 class="mt-3">TOP 100 APP</h4>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-4 px-4">
             <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                <img src="images/about/1.jpeg" width="70px">
+                <img src="images/about/3.png" width="70px">
                 <h4 class="mt-3">100+ CUSTOMERS</h4>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-4 px-4">
             <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                <img src="images/about/1.jpeg" width="70px">
+                <img src="images/about/4.png" width="70px">
                 <h4 class="mt-3">100+ REVIEWS</h4>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-4 px-4">
             <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                <img src="images/about/1.jpeg" width="70px">
+                <img src="images/about/5.png" width="70px">
                 <h4 class="mt-3">50+ BARBERS</h4>
             </div>
         </div>

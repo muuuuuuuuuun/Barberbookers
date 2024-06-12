@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barberbookers - Barbers Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <?php require('inc/links.php')?>
+    <title><?php echo $settings_r['site_title'] ?> - Barber Details</title>
 
 </head>
 <body class="bg-light">
@@ -145,9 +145,21 @@
                             </div>
                         area;
 
-                        echo<<<book
-                            <a href="#" class="btn w-100 text-white custom-bg shadow-none mb-1">Book Now</a>
-                        book;
+                        
+
+                        $book_btn = "";
+                        if(!$settings_r['shutdown']){
+
+                            $login = 0;
+                            if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+                                $login = 1;
+                            }
+                            
+                            echo<<<book
+                            <button onclick='checkLoginToBook($login,$barber_data[id])' class="btn w-100 text-white custom-bg shadow-none mb-1">Book Now</button>
+                            book;
+
+                        }
 
                     ?>
                 </div>
@@ -166,11 +178,10 @@
                 <h5 class="mb-3">Reviews & Ratings</h5>
                 <div>
                     <div class="d-flex align-items-center mb-2">
-                        <img src="images/testimonials/1.jpeg" width="30px">
-                        <h6 class="m-0 ms-2">Random user1</h6>
+                        <img src="images/testimonials/3.jpg" width="30px">
+                        <h6 class="m-0 ms-2">Anonymous</h6>
                     </div>
-                    <p>Lorem alkgjrglar riogrgir girgiorgoirjgoiare goirhgoiregh
-                        eroigjrgjrjagi gaoijgrojg ijgar gorjrogija.
+                    <p>
                     </p>
                     <div class="rating">
                         <i class="bi bi-star-fill text-warning"></i>
